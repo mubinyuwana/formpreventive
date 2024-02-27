@@ -6,6 +6,58 @@
     <title>Preventive Maintenance - Control Valve Check</title>
     <style>
         /* CSS styling */
+        body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: calc(50% - 5px);
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+      }
+
+      select {
+        width: calc(52% - 3px);
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+      }
+
+      textarea {
+  width: calc(52% - 5px);
+  height: 150px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+  font-size: 12px;
+  resize: none;
+}
+
+      button1 {
+        padding: 10px;
+        background-color: #3dd816;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+      button2 {
+        padding: 10px;
+        background-color: #2093f1;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+      }
     </style>
 </head>
 <body>
@@ -14,34 +66,37 @@
         <div id="equipmentForms">
             <!-- Initial form for the first equipment -->
             <form class="equipmentForm">
+                
                 <label for="valveNumber">Valve Number:</label>
-                <input type="text" class="valveNumber" name="valveNumber" required>
-
+                <input type="text" class="valveNumber" name="valveNumber" required /> <br><br>
+                
                 <label for="checkDate">Check Date:</label>
-                <input type="date" class="checkDate" name="checkDate" required>
+                <input type="date" class="checkDate" name="checkDate" required /> <br><br>
 
                 <label for="checkBy">Checked By:</label>
-                <input type="text" class="checkBy" name="checkBy" required>
+                <input type="text" class="checkBy" name="checkBy" required /> <br><br>
 
                 <label for="valvePosition">Valve Position:</label>
-                <input type="text" class="valvePosition" name="valvePosition" required>
+                <input type="text" class="valvePosition" name="valvePosition" required /> <br><br>
+
 
                 <label for="positionerCondition">Positioner Condition:</label>
-                <select class="positionerCondition" name="positionerCondition" required>
+                <select class="positionerCondition" name="positionerCondition" required />
                     <option value="none">None</option>
                     <option value="corrosion">Corrosion</option>
                     <option value="crack">Crack</option>
                     <option value="leakage_out">Leakage Out</option>
                     <option value="leakage_throw">Leakage Throw</option>
-                </select>
+                </select> <br><br>
 
-                <label for="valveCondition">Valve Condition:</label>
-                <textarea class="valveCondition" name="valveCondition" rows="4" required></textarea>
+                <label for="valveCondition">Valve Condition:</label> 
+                <textarea class="valveCondition" name="valveCondition" rows="4" required></textarea> <br><br>
+                <br><br>
             </form>
         </div>
-        <input type="text" id="fileName" placeholder="Enter file name...">
-        <button type="button" onclick="addEquipmentForm()">Add Equipment</button>
-        <button type="button" onclick="generateCSV()">Download CSV File</button>
+        <button1 type="button1" onclick="addEquipmentForm()">Add Equipment</button1> <br><br>
+        <input type="text" id="fileName" placeholder="Enter file name..."> <br><br>
+        <button2 type="button2" onclick="generateCSV()">Download CSV File</button2>
     </div>
 
     <script>
@@ -50,29 +105,31 @@
             var newForm = document.createElement('form');
             newForm.classList.add('equipmentForm');
             newForm.innerHTML = `
-                <label for="valveNumber">Valve Number:</label>
-                <input type="text" class="valveNumber" name="valveNumber" required>
-
+            <label for="valveNumber">Valve Number:</label>
+                <input type="text" class="valveNumber" name="valveNumber" required /> <br><br>
+                
                 <label for="checkDate">Check Date:</label>
-                <input type="date" class="checkDate" name="checkDate" required>
+                <input type="date" class="checkDate" name="checkDate" required /> <br><br>
 
                 <label for="checkBy">Checked By:</label>
-                <input type="text" class="checkBy" name="checkBy" required>
+                <input type="text" class="checkBy" name="checkBy" required /> <br><br>
 
                 <label for="valvePosition">Valve Position:</label>
-                <input type="text" class="valvePosition" name="valvePosition" required>
+                <input type="text" class="valvePosition" name="valvePosition" required /> <br><br>
+
 
                 <label for="positionerCondition">Positioner Condition:</label>
-                <select class="positionerCondition" name="positionerCondition" required>
+                <select class="positionerCondition" name="positionerCondition" required />
                     <option value="none">None</option>
                     <option value="corrosion">Corrosion</option>
                     <option value="crack">Crack</option>
                     <option value="leakage_out">Leakage Out</option>
                     <option value="leakage_throw">Leakage Throw</option>
-                </select>
+                </select> <br><br>
 
-                <label for="valveCondition">Valve Condition:</label>
-                <textarea class="valveCondition" name="valveCondition" rows="4" required></textarea>
+                <label for="valveCondition">Valve Condition:</label> 
+                <textarea class="valveCondition" name="valveCondition" rows="4" required></textarea> <br><br>
+                <br><br>
             `;
             equipmentForms.appendChild(newForm);
         }
