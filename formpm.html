@@ -31,7 +31,7 @@
       }
 
       textarea {
-  width: calc(52% - 5px);
+  width: calc(55% - 5px);
   height: 150px;
   padding: 8px;
   box-sizing: border-box;
@@ -60,7 +60,7 @@
       }
       .flex-container {
   display: flex;
-  height: 100px;
+  flex: 50%
   align-items: center;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -78,10 +78,10 @@
 }
 
 
-/* Responsive layout - makes a one column-layout instead of a two-column layout */
-@media (max-width: 200px) {
-  .flex-container  {
-    flex: 100%;
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
   }
 }
 
@@ -148,8 +148,8 @@
                     </select>
                     </div>
                     <div>
-                      <label for="actuatorCondition">Actuator Condition:</label>
-                      <select class="actuatorCondition" name="actuatorCondition" required >
+                      <label for="regulatorCondition">Regulator Condition:</label>
+                      <select class="regulatorCondition" name="regulatorCondition" required >
                           <option value="none">None</option>
                           <option value="corrosion">Corrosion</option>
                           <option value="crack">Crack</option>
@@ -157,8 +157,58 @@
                           <option value="leakage_throw">Leakage Throw</option>
                       </select>
                       </div>
+                      <div>
+                        <label for="tubbingCondition">Tubbing Condition:</label>
+                        <select class="tubbingCondition" name="tubbingCondition" required >
+                            <option value="none">None</option>
+                            <option value="corrosion">Corrosion</option>
+                            <option value="crack">Crack</option>
+                            <option value="leakage_out">Leakage Out</option>
+                            <option value="leakage_throw">Leakage Throw</option>
+                        </select>
+                        </div>
+                        <div>
+                          <label for="couplingCondition">Coupling Condition:</label>
+                          <select class="couplingCondition" name="couplingCondition" required >
+                              <option value="none">None</option>
+                              <option value="corrosion">Corrosion</option>
+                              <option value="crack">Crack</option>
+                              <option value="leakage_out">Leakage Out</option>
+                              <option value="leakage_throw">Leakage Throw</option>
+                          </select>
+                          </div>
+                          <div>
+                            <label for="bodyCondition">Body Valve Condition:</label>
+                            <select class="bodyCondition" name="bodyCondition" required >
+                                <option value="none">None</option>
+                                <option value="corrosion">Corrosion</option>
+                                <option value="crack">Crack</option>
+                                <option value="leakage_out">Leakage Out</option>
+                                <option value="leakage_throw">Leakage Throw</option>
+                            </select>
+                            </div>
+                            <div>
+                              <label for="bonetflangeCondition">Bonet Flange Condition:</label>
+                              <select class="bonetflangeCondition" name="bonetflangeCondition" required >
+                                  <option value="none">None</option>
+                                  <option value="corrosion">Corrosion</option>
+                                  <option value="crack">Crack</option>
+                                  <option value="leakage_out">Leakage Out</option>
+                                  <option value="leakage_throw">Leakage Throw</option>
+                              </select>
+                              </div>
+                              <div>
+                                <label for="bodyflangeCondition">Body Valve Flange Condition:</label>
+                                <select class="bodyflangeCondition" name="bodyflangeCondition" required >
+                                    <option value="none">None</option>
+                                    <option value="corrosion">Corrosion</option>
+                                    <option value="crack">Crack</option>
+                                    <option value="leakage_out">Leakage Out</option>
+                                    <option value="leakage_throw">Leakage Throw</option>
+                                </select>
+                                </div>
               </div>
-
+              <br><br>
                 <label for="valveCondition">Valve Condition:</label> 
                 <textarea class="valveCondition" name="valveCondition" rows="4" required></textarea> <br><br>
                 <br><br>
@@ -186,17 +236,110 @@
 
                 <label for="valvePosition">Valve Position:</label>
                 <input type="text" class="valvePosition" name="valvePosition" required /> <br><br>
-
-
+                
+                <div class="flex-container">
+                <div>
                 <label for="positionerCondition">Positioner Condition:</label>
-                <select class="positionerCondition" name="positionerCondition" required />
+                <select class="positionerCondition" name="positionerCondition" required >
                     <option value="none">None</option>
                     <option value="corrosion">Corrosion</option>
                     <option value="crack">Crack</option>
                     <option value="leakage_out">Leakage Out</option>
                     <option value="leakage_throw">Leakage Throw</option>
-                </select> <br><br>
-
+                </select> 
+                </div>
+                <div>
+                <label for="actuatorCondition">Actuator Condition:</label>
+                <select class="actuatorCondition" name="actuatorCondition" required >
+                    <option value="none">None</option>
+                    <option value="corrosion">Corrosion</option>
+                    <option value="crack">Crack</option>
+                    <option value="leakage_out">Leakage Out</option>
+                    <option value="leakage_throw">Leakage Throw</option>
+                </select>
+                </div>
+                <div>
+                  <label for="yokeCondition">Yoke Condition:</label>
+                  <select class="yokeCondition" name="yokeCondition" required >
+                      <option value="none">None</option>
+                      <option value="corrosion">Corrosion</option>
+                      <option value="crack">Crack</option>
+                      <option value="leakage_out">Leakage Out</option>
+                      <option value="leakage_throw">Leakage Throw</option>
+                  </select>
+                  </div>
+                  <div>
+                    <label for="stemCondition">Stem Condition:</label>
+                    <select class="stemCondition" name="stemCondition" required >
+                        <option value="none">None</option>
+                        <option value="corrosion">Corrosion</option>
+                        <option value="crack">Crack</option>
+                        <option value="leakage_out">Leakage Out</option>
+                        <option value="leakage_throw">Leakage Throw</option>
+                    </select>
+                    </div>
+                    <div>
+                      <label for="regulatorCondition">Regulator Condition:</label>
+                      <select class="regulatorCondition" name="regulatorCondition" required >
+                          <option value="none">None</option>
+                          <option value="corrosion">Corrosion</option>
+                          <option value="crack">Crack</option>
+                          <option value="leakage_out">Leakage Out</option>
+                          <option value="leakage_throw">Leakage Throw</option>
+                      </select>
+                      </div>
+                      <div>
+                        <label for="tubbingCondition">Tubbing Condition:</label>
+                        <select class="tubbingCondition" name="tubbingCondition" required >
+                            <option value="none">None</option>
+                            <option value="corrosion">Corrosion</option>
+                            <option value="crack">Crack</option>
+                            <option value="leakage_out">Leakage Out</option>
+                            <option value="leakage_throw">Leakage Throw</option>
+                        </select>
+                        </div>
+                        <div>
+                          <label for="couplingCondition">Coupling Condition:</label>
+                          <select class="couplingCondition" name="couplingCondition" required >
+                              <option value="none">None</option>
+                              <option value="corrosion">Corrosion</option>
+                              <option value="crack">Crack</option>
+                              <option value="leakage_out">Leakage Out</option>
+                              <option value="leakage_throw">Leakage Throw</option>
+                          </select>
+                          </div>
+                          <div>
+                            <label for="bodyCondition">Body Valve Condition:</label>
+                            <select class="bodyCondition" name="bodyCondition" required >
+                                <option value="none">None</option>
+                                <option value="corrosion">Corrosion</option>
+                                <option value="crack">Crack</option>
+                                <option value="leakage_out">Leakage Out</option>
+                                <option value="leakage_throw">Leakage Throw</option>
+                            </select>
+                            </div>
+                            <div>
+                              <label for="bonetflangeCondition">Bonet Flange Condition:</label>
+                              <select class="bonetflangeCondition" name="bonetflangeCondition" required >
+                                  <option value="none">None</option>
+                                  <option value="corrosion">Corrosion</option>
+                                  <option value="crack">Crack</option>
+                                  <option value="leakage_out">Leakage Out</option>
+                                  <option value="leakage_throw">Leakage Throw</option>
+                              </select>
+                              </div>
+                              <div>
+                                <label for="bodyflangeCondition">Body Valve Flange Condition:</label>
+                                <select class="bodyflangeCondition" name="bodyflangeCondition" required >
+                                    <option value="none">None</option>
+                                    <option value="corrosion">Corrosion</option>
+                                    <option value="crack">Crack</option>
+                                    <option value="leakage_out">Leakage Out</option>
+                                    <option value="leakage_throw">Leakage Throw</option>
+                                </select>
+                                </div>
+              </div>
+              <br><br>
                 <label for="valveCondition">Valve Condition:</label> 
                 <textarea class="valveCondition" name="valveCondition" rows="4" required></textarea> <br><br>
                 <br><br>
